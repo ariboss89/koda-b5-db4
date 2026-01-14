@@ -27,7 +27,7 @@ INSERT INTO events (event_name, start_date) VALUES
 ('Event C', '2024-01-10');
 
 SELECT e.event_name, string_agg(e2.event_name, ', ')
-FROM events e 
+FROM events e
 LEFT JOIN events e2 ON e2.start_date > e.start_date
 GROUP BY e.event_id
 ORDER BY e.event_id;
